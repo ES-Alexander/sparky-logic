@@ -1,7 +1,14 @@
 html, body {
     padding: 0px;
     margin: 0px;
-    background-color: black;
+    background:
+        linear-gradient(to bottom right, rgba(0,0,0,0.2), rgba(1,1,1,0.05)),
+        radial-gradient(#000 18%, #111 20%, #333 24%, transparent 25%),
+        linear-gradient(to bottom right, #111 30%, #000 34%, transparent 33%, transparent 67%, #000 66%, #222 68%, #111 70%),
+        linear-gradient(to top right, #111 30%, #000 34%, transparent 33%, transparent 67%, #000 66%, #222 68%, #111 70%),
+        linear-gradient(to bottom, #050505, #151515);
+    background-color: #555;
+    background-size: 20px 20px;
     color: grey;
 }
 header {
@@ -14,7 +21,7 @@ header {
 }
 
 header, footer {
-    background-color: #222;
+    background-color: #333;
 }
 
 h1 {
