@@ -26,16 +26,21 @@ section {
     text-align: center;
     width: 100%;
     margin: auto;
+    margin-bottom: 80px;
 }
 
 footer {
     position: fixed;
     bottom: 0px;
-    width: 100vw;
+    right: 0px;
+    left: 0px;
     padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 2px;
     margin: 0px;
     box-shadow: 0px -2px 5px orange;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 footer h2 {
     display: none;
@@ -48,6 +53,7 @@ label {
 button {
     margin-bottom: 10px;
 }
+input {border-radius: 8px;}
 
 #inputs {
     margin: auto;
@@ -55,7 +61,7 @@ button {
 /* #nBitsLabel {color: grey;} */
 #outputs {
     text-align: left;
-    width: 20rem;
+    width: 25rem;
     border-radius: 4px;
     background-color: #333;
     padding: 5px;
