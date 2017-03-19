@@ -116,6 +116,7 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
     
     outputDict["Dec"][1].innerHTML = dec;
     
+
     // Determine binary (excess-n) value and add to the screen
     outputDict["BinXS"][2] = numToBit(dec + Math.pow(2,nBits-1));
     console.log(outputDict["BinXS"][2]);
@@ -123,7 +124,7 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
         outputDict["BinXS"][2];
 
     // if value is negative, ignore unsigned binary 
-    if(dec>=0) {
+    if(dec >= 0) {
         console.log("positive");
         var binList = ["BinU","BinSM","BinOC","BinTC","BinXS"];
         // Determine binary (unsigned) value and add to screen
@@ -166,11 +167,11 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
                         outputDict["BinU"][2];
             } else {
                 // print values for unsigned, signed, 
-                for(var i in binList) {
+            for(var i=0; i<(binList.length - 1); i++) {
                     outputDict[binList[i]][1].innerHTML = 
                         zString(nBits - outputDict[binList[i]][2].length) + 
                         outputDict[binList[i]][2];
-                }
+            }
             }
         }
     } else if(dec<0) {
@@ -220,7 +221,6 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
             outputDict[element][1].innerHTML = "Invalid Input";
         }
     }
-    
 }
 
 function numToBit(num){
