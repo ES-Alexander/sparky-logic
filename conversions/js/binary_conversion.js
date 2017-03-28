@@ -38,7 +38,7 @@ window.onload = function() {
         "Hex": [hexOutput, hex, 0],
         "Oct": [octOutput, oct, 0]
     };
-    
+
     // Listeners
     valueInput.addEventListener('change', function(evt) {
         value = valueInput.value;
@@ -104,7 +104,7 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
             for(var i=0; i<outputDict["BinOC"][2].length; i++) {
                 if(outputDict["BinOC"][2][i].match("0")) {
                     binTCN += "1";
-                } else {
+        } else {
                     binTCN += "0";
                 }
             }
@@ -206,11 +206,14 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
         outputDict["BinTC"][1].innerHTML = leadingVal + 
             outputDict["BinXS"][1].innerHTML.slice(1);
         
-        binList3 = ["BinSM","BinOC","BinXS"];
+        binList3 = ["BinSM","BinOC"];
         console.log(outputDict["BinSM"][1].textContent.length);
         if(outputDict["BinSM"][1].textContent.length > nBits) {
             for(var i=0; i<binList3.length; i++) {
                 overflowError(outputDict[binList3[i]][1]);
+            }
+            if(outputDict["BinSM"][1].textContent.length > nBits + 1) {
+                overflowError(outputDict["BinXS"][1]);
             }
         }
         if(dec < -1*Math.pow(2,nBits-1)) {
@@ -223,6 +226,7 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
     }
 }
 
+// Converts a number 'num' to a binary bit.
 function numToBit(num){
     var number = num;
     var result = [];
@@ -233,6 +237,7 @@ function numToBit(num){
     return array2String(result);
 }
 
+// Returns a string of the elements of an array (no delimiter).
 function array2String(array) {
     var str = "";
     for(var index in array) {
@@ -241,6 +246,7 @@ function array2String(array) {
     return str;
 }
 
+// Creates a string of zeros, of length 'num'.
 function zString(num) {
     var str = "";
     for(var i=0;i<num;i++) {
@@ -249,6 +255,7 @@ function zString(num) {
     return str;
 }
 
+// Creates a string of ones, of length 'num'.
 function oneString(num) {
     var str = "";
     for(var i=0;i<num;i++) {
@@ -257,6 +264,7 @@ function oneString(num) {
     return str;
 }
 
+// Displays an overflow error in the given HTML element.
 function overflowError(element) {
     element.innerHTML = "OVERFLOW - Value not possible to display in given number of bits.";
 }
