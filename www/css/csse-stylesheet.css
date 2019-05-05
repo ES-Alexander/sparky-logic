@@ -1,0 +1,76 @@
+footer h2 {
+    display: none;
+}
+
+table, td, th {
+    border: 1px solid #454545;
+    border-collapse: collapse;
+    padding: 0px 5px;
+}
+table {margin: auto;}
+
+label {
+    margin-left: 30px;
+    font-weight: bold;
+}
+button {
+    margin-bottom: 10px;
+}
+input {border-radius: 8px;}
+
+#inputs {
+    margin: auto;
+}
+/* #nBitsLabel {color: grey;} */
+#outputs {
+    text-align: left;
+    max-width: 25rem;
+    border-radius: 4px;
+    background-color: #333;
+    padding: 5px;
+    margin: auto;
+}
+
+.output {
+    margin-bottom: 5px;
+}
+.output span {
+    font-weight: bold;
+    float: right;
+    font: 12pt monospace;
+}
+#nXSval {
+    font-weight: normal;
+    float: none;
+    font: 12pt serif;
+}
+.initial label {
+    margin-left: 0px;
+}
+
+.tab {
+    display: inline-block;
+    margin: 0px 5px 20px 5px;
+    padding: 5px 5px 5px 5px;
+    border-right: 2px groove #DD8300;
+    border-left: 2px ridge #DD8300;
+}
+
+.tab:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+#conversion {
+    color: #DD8300;
+    font-weight: bold;
+}
+
+span.entity {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.equivalency {
+    display: none;
+}

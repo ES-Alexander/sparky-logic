@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <title>Logic Function Web Applet</title>
+    <meta content="charset=utf-8">
+    <meta name="description" content="Number Conversion Applet">
+    <meta name="author" content="ES Alexander">
+    <meta name="keywords" content="Binary, binary conversion, 
+            signed-magnitude, unsigned, excess-m, ones complement, 
+            twos complement, hexadecimal, hex, octal, oct, decimal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link type="text/css" rel="stylesheet" href="css/main-stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="css/csse-stylesheet.css">
+    <script type="text/javascript" src="js/logic2.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Logic - Web Applet</h1>
+    </header>
+
+    <section>
+        <h2 id="heading">Logic Function to Table Conversions</h2>
+    
+        <div id="tabs">
+            <span id="conversion" class="tab">Function to Truth Table Conversion</span>
+            <span id="equivalency" class="tab">Function Equivalency Checking</span>
+        </div>
+        
+        <div id="inputs">
+            <span class="entity initial">
+                <label for="function" id="function-label">Input Logic Function:</label>
+                <input id="function" type="text">
+            </span>
+            <span class="entity">
+                <label for="inputList">List Inputs: </label>
+                <input id="inputList" type="text">
+            </span>
+            <br>
+            <textarea id="working" class="equivalency" rows="10" cols="50">Input lines of equivalency</textarea>
+        </div>
+
+        <button id="convert" class="conversion">Convert</button>
+        <button id="check-equivalency" class="equivalency">Check Equivalency</button>
+
+        <div id="outputs">
+            <div id="operatorInfo" class="output">
+                <h3 style='margin-top: 2px'>Function Parameters</h3>
+                <table>
+                    <thead style='border-bottom:2px solid;'> 
+                        <tr> 
+                            <th style='border-right:2px solid'> Logical Operation* </th>
+                            <th colspan="2"> Allowed Symbols </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style='border-right:2px solid'>Delimiter</td>
+                            <td>(</td>
+                            <td>)</td>
+                        </tr>
+                        <tr>
+                            <td style='border-right:2px solid'>NOT</td>
+                            <td>!</td>
+                            <td>~</td>
+                        </tr>
+                        <tr>
+                            <td style='border-right:2px solid'>AND**</td>
+                            <td>&amp;</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td style='border-right:2px solid'>XOR</td>
+                            <td colspan="2">^</td>
+                        </tr>
+                        <tr>
+                            <td style='border-right:2px solid'>OR</td>
+                            <td>|</td>
+                            <td>+</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    *Logical operations are in order of evaluated preference
+                    **Note: AND can also be performed by adjacency (e.g. AB = A&amp;B).
+                    <br>
+                    Inputs should be listed with delimiting commas (e.g. C,B,A).
+                    <br>
+                    Please ensure inputs are in the order you desire.
+                </p>
+            </div>
+            <div id="funcOutput" class="output">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>My thing</h2>
+        This Web Applet is my property, but you can use it if you want. I don't mind. Maybe give me a reference though (@ES-Alexander - 2017)? :-)
+    </footer>
+
+</body>
+</html>

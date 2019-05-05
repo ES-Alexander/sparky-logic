@@ -99,18 +99,54 @@ function calculateAndUpdateValues(outputDict, inputVal, nBits) {
             dec = parseInt(outputDict["BinOC"][2], 2);
         }
     } else if(inputVal.match("BinTC")) {
+        // If the number is negative, convert to decimal
         if(outputDict["BinTC"][2][0].match("1")) {
             var binTCN = "";
             for(var i=0; i<outputDict["BinOC"][2].length; i++) {
                 if(outputDict["BinOC"][2][i].match("0")) {
                     binTCN += "1";
-        } else {
+                } else {
                     binTCN += "0";
                 }
             }
             dec = -1*parseInt(binTCN, 2);
         } else {
+            // Otherwise number is positive and convert directly
             dec = parseInt(outputDict["BinTC"][2], 2);
+        }
+    } else if(inputVal.match("BinXS")) {
+        console.log("Binary XS Conversion");
+        var XSnum = outputDict["BinXS"][2];
+        console.log("XSnum length: " + XSnum.length);
+        var TCequiv = "";
+        // Convert to two's comp first
+        for(var i=0; i<XSnum.length; i++) {
+            if(i==0) {
+                if(XSnum[0].match("0")) {
+                    TCequiv += "1";
+                } else {
+                    TCequiv += "0";
+                }
+            } else {
+                TCequiv += XSnum[i];
+            }
+        }
+        console.log("TCequiv established: " + TCequiv + ", " + TCequiv.length);
+        // Apply two's comp to decimal conversion
+        // If the number is negative, convert to decimal
+        if(TCequiv[0].match("1")) {
+            var binTCN = "";
+            for(var i=0; i<TCequiv.length; i++) {
+                if(TCequiv[i].match("0")) {
+                    binTCN += "1";
+                } else {
+                    binTCN += "0";
+                }
+            }
+            dec = -1*parseInt(binTCN, 2);
+        } else {
+            // Otherwise number is positive and convert directly
+            dec = parseInt(TCequiv, 2);
         }
     }
     

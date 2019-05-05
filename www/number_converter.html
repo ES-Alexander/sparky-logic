@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <title>Number Conversion</title>
+    <meta content="charset=utf-8">
+    <meta name="description" content="Number Conversion Applet">
+    <meta name="author" content="ES Alexander">
+    <meta name="keywords" content="Binary, binary conversion, 
+            signed-magnitude, unsigned, excess-m, ones complement, 
+            twos complement, hexadecimal, hex, octal, oct, decimal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link type="text/css" rel="stylesheet" href="css/main-stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="css/csse-stylesheet.css">
+    <script type="text/javascript" src="js/binary_conversion.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Number Conversion - Web Applet</h1>
+    </header>
+    
+    <section>
+        <h2>Binary, Decimal, Hexadecimal, and Octal Conversions</h2>
+        
+        <div id="inputs">
+            <span class="entity initial">
+                <label for="value">Input Value:</label>
+                <input id="value" type="text">
+            </span>
+            <span class="entity">
+                <label for="valType">Value Type: </label>
+                <input id="valType" type="text" list="typeList" size="25">
+
+                <datalist id="typeList">
+                    <option label="(decimal)">Dec</option>
+                    <option label="(unsigned)">BinU</option>
+                    <option label="(signed magnitude)">BinSM</option>
+                    <option label="(ones' complement)">BinOC</option>
+                    <option label="(two's complement)">BinTC</option>
+                    <option label="(excess-n)">BinXS</option>
+                    <option label="(hexadecimal)">Hex</option>
+                    <option label="(octal)">Oct</option>
+                </datalist>
+            </span>
+            <span class="entity">
+                <label for="nBits" id="nBitsLabel">Number of Bits: </label>
+                <input id="nBits" type="number" min=1> <!-- disabled -->
+            </span>
+        </div>
+        
+        <button id="convert">Convert</button>
+        
+        <div id="outputs">
+            <div id="decOutput" class="output">
+                Decimal: <span id="dec"></span>
+            </div>
+            <div id="binUOutput" class="output">
+                Binary (unsigned): <span id="binU"></span>
+            </div>
+            <div id="binSMOutput" class="output">
+                Binary (signed magnitude): <span id="binSM"></span>
+            </div>
+            <div id="binOCOutput" class="output">
+                Binary (ones' complement): <span id="binOC"></span>
+            </div>
+            <div id="binTCOutput" class="output">
+                Binary (two's complement): <span id="binTC"></span>
+            </div>
+            <div id="binXSOutput" class="output">
+                Binary (excess-<span id="nXSval">n</span>): <span id="binXS"></span>
+            </div>
+            <div id="hexOutput" class="output">
+                Hexadecimal (hex): <span id="hex"></span>
+            </div>
+            <div id="octOutput" class="output">
+                Octal (oct): <span id="oct"></span>
+            </div>    
+        </div>
+    
+    
+    </section>
+    
+    <footer>
+        <h2>My thing</h2>
+        This Web Applet is my property, but you can use it if you want. I don't mind. Maybe give me a reference though (@ES-Alexander - 2017)? :-)
+    </footer>
+
+</body>
+</html>

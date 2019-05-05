@@ -11,6 +11,7 @@ html, body {
     background-size: 20px 20px;
     color: grey;
 }
+
 header {
     box-shadow: 0px 2px 5px orange;
     padding-left: 10px;
@@ -33,7 +34,7 @@ section {
     text-align: center;
     width: 100%;
     margin: auto;
-    margin-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 footer {
@@ -49,50 +50,31 @@ footer {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
-footer h2 {
-    display: none;
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    /*display: inline-block;*/
+    /*border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
-label {
-    margin-left: 30px;
-    font-weight: bold;
-}
-button {
-    margin-bottom: 10px;
-}
-input {border-radius: 8px;}
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 10pt;
+    padding: 5px 0;
+    border-radius: 6px;
 
-#inputs {
-    margin: auto;
-}
-/* #nBitsLabel {color: grey;} */
-#outputs {
-    text-align: left;
-    width: 25rem;
-    border-radius: 4px;
-    background-color: #333;
-    padding: 5px;
-    margin: auto;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
 }
 
-.output {
-    margin-bottom: 5px;
-}
-.output span {
-    font-weight: bold;
-    float: right;
-    font: 12pt monospace;
-}
-#nXSval {
-    font-weight: normal;
-    float: none;
-    font: 12pt serif;
-}
-.initial label {
-    margin-left: 0px;
-}
-
-span.entity {
-    display: inline-block;
-    margin-bottom: 10px;
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
